@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  kvdnode0:
-    container_name: kvdnode0
-    image: "kava/kavanode"
+  furynode0:
+    container_name: furynode0
+    image: "furyhub/furynode"
     ports:
       - "26656-26657:26656-26657"
     environment:
@@ -15,9 +15,9 @@ services:
       localnet:
         ipv4_address: 192.168.10.2
 
-  kvdnode1:
-    container_name: kvdnode1
-    image: "kava/kavanode"
+  furynode1:
+    container_name: furynode1
+    image: "furyhub/furynode"
     ports:
       - "26659-26660:26656-26657"
     environment:
@@ -29,9 +29,9 @@ services:
       localnet:
         ipv4_address: 192.168.10.3
 
-  kvdnode2:
-    container_name: kvdnode2
-    image: "kava/kavanode"
+  furynode2:
+    container_name: furynode2
+    image: "furyhub/furynode"
     environment:
       - ID=2
       - LOG=${LOG:-kvd.log}
@@ -43,9 +43,9 @@ services:
       localnet:
         ipv4_address: 192.168.10.4
 
-  kvdnode3:
-    container_name: kvdnode3
-    image: "kava/kavanode"
+  furynode3:
+    container_name: furynode3
+    image: "furyhub/furynode"
     environment:
       - ID=3
       - LOG=${LOG:-kvd.log}
