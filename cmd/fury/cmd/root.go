@@ -26,7 +26,7 @@ import (
 )
 
 // EnvPrefix is the prefix environment variables must have to configure the app.
-const EnvPrefix = "KAVA"
+const EnvPrefix = "FURY"
 
 // NewRootCmd creates a new root command for the kava blockchain.
 func NewRootCmd() *cobra.Command {
@@ -47,8 +47,8 @@ func NewRootCmd() *cobra.Command {
 		WithViper(EnvPrefix)
 
 	rootCmd := &cobra.Command{
-		Use:   "kava",
-		Short: "Daemon and CLI for the Kava blockchain.",
+		Use:   "fury",
+		Short: "Daemon and CLI for the Fury Hub blockchain.",
 		PersistentPreRunE: func(cmd *cobra.Command, _ []string) error {
 			cmd.SetOut(cmd.OutOrStdout())
 			cmd.SetErr(cmd.ErrOrStderr())

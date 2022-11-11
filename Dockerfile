@@ -7,7 +7,7 @@ FROM golang:1.18-alpine AS build-env
 RUN apk add bash git make libc-dev gcc linux-headers eudev-dev jq curl
 
 # Set working directory for the build
-WORKDIR /root/kava
+WORKDIR /root/fury
 # default home directory is /root
 
 # Add source files
@@ -23,6 +23,6 @@ RUN --mount=type=cache,target=/root/.cache/go-build \
 FROM alpine:3.15
 
 RUN apk add bash jq curl
-COPY --from=build-env /go/bin/kava /bin/kava
+COPY --from=build-env /go/bin/fury /bin/fury
 
-CMD ["kava"]
+CMD ["fury"]
